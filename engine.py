@@ -13,10 +13,13 @@ from classes.widget import Widget
 
 
 
+
 pygame.init()
 pygame.font.init()
 
 #do pygame.font.get_fonts() to see all fonts
+pygame.font.get_fonts()
+
 
 
 def initialize_engine(screen_width=1920,screen_height=1080):
@@ -59,20 +62,26 @@ def initialize_engine(screen_width=1920,screen_height=1080):
     global green
     global blue
 
-    black = (0, 0, 0)
-    white = (255, 255, 255)
-    red = (255, 0, 0)
-    green = (0, 255, 0)
-    blue = (0, 0, 255)
+    #(R,G,B,A)
+    black = (0, 0, 0,255)
+    white = (255, 255, 255,255)
+    red = (255, 0, 0,255)
+    green = (0, 255, 0,255)
+    blue = (0, 0, 255,255)
 
     global background_color
-    background_color = black
+    background_color = (255, 127, 80, 255)
 
+
+
+    #print(pygame.Color("Coral"))
 
 
 
 def menu():
 
+
+    menu_color = pygame.Color("azure2")
     main_text_width = 500
     main_text_height = 100
 
@@ -80,9 +89,9 @@ def menu():
     main_text_y = 50
 
     main_text_widget =  Widget(main_text_x,main_text_y,main_text_width,main_text_height,color=red,
-                               text="Welcome",text_color=white,text_coords=Alignment(main_text_x,main_text_y).align_center(main_text_width,main_text_height,400,75),text_size=100)
-
-
+                               text="Welcome",text_color=white,text_size=100,text_alignment="center")
+    screen.fill(menu_color)
+#text_coords=Alignment(main_text_x,main_text_y).align_center(main_text_width,main_text_height,250,50)
     while True:
         pygame.display.update()
 

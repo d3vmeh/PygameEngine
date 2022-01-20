@@ -21,3 +21,10 @@ class Alignment:
 
     def align_center(self,surfacewidth,surfaceheight,objectwidth,objectheight):
         return (self.align_center_x(surfacewidth,objectwidth),self.align_center_y(surfaceheight,objectheight))
+
+
+
+def text_align_center(textsurface,surfacex,surfacey,surfacewidth,surfaceheight):
+    text_rect = textsurface.get_rect(center=(surfacewidth / 2 + surfacex, surfaceheight / 2 + surfacey))
+    #display.blit(self.textsurface, self.text_rect)
+    return text_rect

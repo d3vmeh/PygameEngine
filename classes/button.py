@@ -10,3 +10,13 @@ class Button (widget.Widget):
 
     def onClicked(self):
         print("button clicked")
+
+
+    def isHovered(self,eventx,eventy):
+        if self.x<eventx<self.x+self.width and self.y<eventy<self.y+self.height:
+            return True
+        else:
+            return False
+
+    def onHovered(self):
+        print("Button Hovered")
